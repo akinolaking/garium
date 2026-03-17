@@ -9,7 +9,7 @@ export function ProblemSection() {
           <div className="max-w-[800px] mx-auto text-center">
             <SectionLabel className="mb-5 block">The real cost of shared AI</SectionLabel>
             <h2 className="font-semibold text-black mb-8 text-balance" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: '1.15', letterSpacing: '-0.02em' }}>
-              Every time your team uses ChatGPT or Copilot, your organisation&apos;s most sensitive information leaves the building.
+              Your team is using AI. Your data is leaving with it.
             </h2>
           </div>
         </AnimatedSection>

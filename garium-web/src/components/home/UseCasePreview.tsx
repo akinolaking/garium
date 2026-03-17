@@ -43,7 +43,7 @@ export function UseCasePreview() {
           <div className="text-center mb-14">
             <p className="eyebrow mb-5 block">Who we work with</p>
             <h2 className="font-semibold text-black text-balance" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: '1.15', letterSpacing: '-0.02em' }}>
-              Private AI works for any organisation that handles sensitive information.
+              If it matters, it stays private.
             </h2>
           </div>
         </AnimatedSection>

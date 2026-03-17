@@ -9,7 +9,7 @@ export function HomeCTA() {
         <AnimatedSection>
           <div className="max-w-[640px] mx-auto text-center">
             <h2 className="font-semibold text-white text-balance mb-6" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: '1.15', letterSpacing: '-0.02em' }}>
-              The organisations that act first will have the clearest advantage.
+              The window is open. Not for long.
             </h2>
             <p className="text-white/70 text-lg leading-relaxed mb-8">
               Private AI is not theoretical. The infrastructure exists. The models are ready. The question is whether your organisation will control them, or rely on someone else to.

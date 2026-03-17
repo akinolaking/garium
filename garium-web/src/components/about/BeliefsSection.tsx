@@ -32,7 +32,7 @@ export function BeliefsSection() {
           <div className="text-center mb-14">
             <SectionLabel className="mb-5 block">What we believe</SectionLabel>
             <h2 className="font-semibold text-black" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: '1.15', letterSpacing: '-0.02em' }}>
-              Four things we will not compromise on.
+              Four beliefs. No exceptions.
             </h2>
           </div>
         </AnimatedSection>

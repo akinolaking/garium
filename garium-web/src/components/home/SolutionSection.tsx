@@ -28,7 +28,7 @@ export function SolutionSection() {
           <div className="max-w-[680px] mx-auto text-center mb-14">
             <p className="eyebrow mb-5 block">What we do</p>
             <h2 className="font-semibold text-black text-balance" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: '1.15', letterSpacing: '-0.02em' }}>
-              A complete AI platform, deployed on dedicated infrastructure, running entirely within your control.
+              Everything they need. Nothing that leaves.
             </h2>
             <p className="text-[#374151] text-lg leading-relaxed mt-5">
               Deploy a private AI platform for your organisation. Your team gets the same capability as the shared tools. Your data stays inside your environment. You pay a flat monthly fee regardless of how many people use it.
