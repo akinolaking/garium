@@ -1,0 +1,57 @@
+import { AnimatedSection } from '@/components/ui/AnimatedSection'
+import { SectionLabel } from '@/components/ui/SectionLabel'
+
+const STEPS = [
+  {
+    number: '01',
+    title: 'We understand your organisation',
+    description: 'A focused consultation where we learn about your team structure, data sensitivity, existing workflows, and what you actually need AI to do. We design a deployment plan specific to your use case.',
+  },
+  {
+    number: '02',
+    title: 'We deploy your platform',
+    description: 'Infrastructure provisioned. Models configured. Knowledge base loaded. Interfaces set up. Access controls in place. Most deployments complete within 9 to 14 days of contract signing.',
+  },
+  {
+    number: '03',
+    title: 'Your team starts working differently',
+    description: 'Your team accesses private AI through a clean browser interface. No training required. We handle onboarding. The platform is available from day one.',
+  },
+]
+
+export function HowItWorks() {
+  return (
+    <section id="how-it-works" className="section-pad bg-[#EDF0F7]">
+      <div className="container-garium">
+        <AnimatedSection>
+          <div className="text-center mb-16">
+            <SectionLabel className="mb-5 block">How it works</SectionLabel>
+            <h2 className="font-semibold text-black" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: '1.15', letterSpacing: '-0.02em' }}>
+              Three steps from contract to live platform.
+            </h2>
+          </div>
+        </AnimatedSection>
+
+        <div className="relative">
+          <div className="hidden lg:block absolute top-10 left-[calc(16.67%+1.5rem)] right-[calc(16.67%+1.5rem)] h-px bg-[#D1D9E8]" />
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {STEPS.map((step, i) => (
+              <AnimatedSection key={step.number} delay={i * 0.15}>
+                <div className="relative flex flex-col gap-5 pt-4">
+                  <div className="relative z-10 w-20 h-20 rounded-full bg-white border-2 border-[#D1D9E8] flex items-center justify-center mx-auto lg:mx-0">
+                    <span className="text-2xl font-bold text-[#081c52]">{step.number}</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-black mb-3">{step.title}</h3>
+                    <p className="text-[#374151] text-base leading-relaxed">{step.description}</p>
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}

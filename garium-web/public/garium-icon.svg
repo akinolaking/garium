@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="currentColor">
+  <!-- Garium crystal cluster brand mark -->
+  <!-- Top -->
+  <polygon points="46,6 54,6 58,14 50,17 42,14"/>
+  <!-- Upper right -->
+  <polygon points="62,12 70,18 67,26 59,24 57,16"/>
+  <!-- Right top -->
+  <polygon points="74,28 80,36 75,44 67,40 67,32"/>
+  <!-- Right bottom -->
+  <polygon points="72,50 78,58 72,64 64,60 65,52"/>
+  <!-- Lower right -->
+  <polygon points="60,68 66,76 60,82 52,78 52,70"/>
+  <!-- Bottom -->
+  <polygon points="42,74 50,78 50,86 41,84 38,76"/>
+  <!-- Lower left -->
+  <polygon points="28,64 36,68 34,76 26,74 24,66"/>
+  <!-- Left bottom -->
+  <polygon points="20,50 28,52 28,62 20,62 16,54"/>
+  <!-- Left top -->
+  <polygon points="22,34 30,30 36,38 30,44 22,42"/>
+  <!-- Upper left -->
+  <polygon points="34,16 42,14 44,22 36,26 30,22"/>
+  <!-- Center top -->
+  <polygon points="46,22 54,20 56,30 48,32 44,26"/>
+  <!-- Center bottom -->
+  <polygon points="44,54 52,52 54,62 46,64 40,58"/>
+</svg>

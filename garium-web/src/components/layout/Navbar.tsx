@@ -1,0 +1,97 @@
+'use client'
+import Link from 'next/link'
+import { Menu } from 'lucide-react'
+import { useScrolled } from '@/hooks/useScrolled'
+import { useMobileMenu } from '@/hooks/useMobileMenu'
+import { useCurrency } from '@/hooks/useCurrency'
+import { GariumLogo } from '@/components/ui/GariumLogo'
+import { Button } from '@/components/ui/Button'
+import { CurrencySwitcher } from '@/components/ui/CurrencySwitcher'
+import { MobileMenu } from './MobileMenu'
+import { cn } from '@/lib/utils'
+
+const NAV_LINKS = [
+  { href: '/services', label: 'Services' },
+  { href: '/pricing', label: 'Pricing' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
+]
+
+export function Navbar() {
+  const scrolled = useScrolled(20)
+  const { isOpen, open, close } = useMobileMenu()
+  const { currency, setCurrency } = useCurrency()
+
+  return (
+    <>
+      <header
+        className={cn(
+          'fixed top-0 left-0 right-0 z-[200] transition-all duration-350',
+          scrolled
+            ? 'bg-white shadow-sm border-b border-[#D1D9E8]'
+            : 'bg-transparent'
+        )}
+      >
+        <div className="container-garium">
+          <div className="flex items-center justify-between h-16">
+            <Link href="/" aria-label="Garium home">
+              <GariumLogo
+                size="md"
+                color={scrolled ? '#081c52' : '#F5F7FA'}
+                animate={false}
+              />
+            </Link>
+
+            <nav className="hidden md:flex items-center gap-1">
+              {NAV_LINKS.map(link => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={cn(
+                    'px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200',
+                    scrolled
+                      ? 'text-black hover:text-[#072c8f] hover:bg-[#eef1f9]'
+                      : 'text-white/80 hover:text-white hover:bg-white/10'
+                  )}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+
+            <div className="hidden md:flex items-center gap-3">
+              <CurrencySwitcher
+                currency={currency}
+                onCurrencyChange={setCurrency}
+                light={!scrolled}
+              />
+              <Link href="/contact">
+                <Button
+                  variant={scrolled ? 'primary' : 'outline'}
+                  size="sm"
+                  aria-label="Book a consultation"
+                  className={!scrolled ? 'border-white text-white hover:bg-white hover:text-[#081c52]' : ''}
+                >
+                  Book a consultation
+                </Button>
+              </Link>
+            </div>
+
+            <button
+              onClick={open}
+              aria-label="Open menu"
+              className={cn(
+                'md:hidden p-2 rounded-lg transition-colors',
+                scrolled ? 'text-[#081c52] hover:bg-[#eef1f9]' : 'text-white hover:bg-white/10'
+              )}
+            >
+              <Menu className="w-6 h-6" />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <MobileMenu isOpen={isOpen} onClose={close} />
+    </>
+  )
+}
