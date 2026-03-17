@@ -74,7 +74,7 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-[#1e2f5e] flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-[#728acf]">
-            Garium 2026. Conqolx Technologies Company. All rights reserved.
+            &copy; 2026 Garium. Conqolx Technologies Company. All rights reserved.
           </p>
         </div>
       </div>

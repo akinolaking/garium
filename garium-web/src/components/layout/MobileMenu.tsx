@@ -1,4 +1,5 @@
 'use client'
+import { useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { X } from 'lucide-react'
@@ -18,6 +19,13 @@ const NAV_LINKS = [
 ]
 
 export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
+  useEffect(() => {
+    if (!isOpen) return
+    const handleKeyDown = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose() }
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [isOpen, onClose])
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -29,8 +37,12 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             transition={{ duration: 0.2 }}
             className="fixed inset-0 bg-black/40 z-[300]"
             onClick={onClose}
+            aria-hidden="true"
           />
           <motion.div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Navigation menu"
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
