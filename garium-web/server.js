@@ -4,7 +4,10 @@ const next = require('next')
 
 const dev = process.env.NODE_ENV !== 'production'
 const hostname = 'localhost'
-const port = parseInt(process.env.PORT || '3000', 10)
+
+// Passenger may pass PORT as a socket path — fall back to 3000 if it's not a number
+const rawPort = process.env.PORT
+const port = rawPort && /^\d+$/.test(rawPort) ? parseInt(rawPort, 10) : 3000
 
 const app = next({ dev, hostname, port })
 const handle = app.getRequestHandler()
