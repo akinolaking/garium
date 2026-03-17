@@ -22,7 +22,7 @@ export function HeroSection() {
               Private AI Infrastructure
             </motion.p>
 
-            <h1 className="font-semibold text-white mb-6" style={{ fontSize: 'clamp(3rem, 6vw, 5rem)', lineHeight: '1.05', letterSpacing: '-0.03em' }}>
+            <h1 className="font-semibold text-white mb-6" style={{ fontSize: 'clamp(2.25rem, 8vw, 5rem)', lineHeight: '1.05', letterSpacing: '-0.03em' }}>
               {HEADLINE_LINES.map((line, i) => (
                 <motion.span
                   key={i}
@@ -74,7 +74,7 @@ export function HeroSection() {
             </motion.p>
           </div>
 
-          <div className="hidden lg:flex items-center justify-center">
+          <div className="hidden lg:flex items-center justify-center relative">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -83,6 +83,34 @@ export function HeroSection() {
               role="img"
             >
               <CrystalIcon size={200} color="rgba(255,255,255,0.18)" animate={true} />
+            </motion.div>
+
+            {/* Floating stats card — glassmorphism */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.9 }}
+              className="absolute -bottom-4 -right-4 rounded-2xl p-5 shadow-xl max-w-[220px] glass-highlight"
+              aria-label="Platform statistics"
+            >
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" aria-hidden />
+                <span className="text-white/70 text-xs font-medium">Live infrastructure</span>
+              </div>
+              <div className="space-y-2">
+                <div className="flex justify-between items-center">
+                  <span className="text-white/50 text-xs">Average response</span>
+                  <span className="text-white text-xs font-semibold">&lt; 3 sec</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-white/50 text-xs">Data leaves environment</span>
+                  <span className="text-green-400 text-xs font-semibold">Never</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-white/50 text-xs">Setup time</span>
+                  <span className="text-white text-xs font-semibold">9–14 days</span>
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>

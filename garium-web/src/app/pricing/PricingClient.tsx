@@ -12,15 +12,39 @@ import { SME_PLANS, ENTERPRISE_PLANS } from '@/lib/plans'
 import type { BillingCycle } from '@/types/plans'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
-import { Check, TrendingDown } from 'lucide-react'
+import { Check, TrendingDown, Shield, Lock, RefreshCw, BarChart2, AlertCircle, Users } from 'lucide-react'
 
 const INCLUDED_FEATURES = [
-  'Secure HTTPS on your own subdomain',
-  'SSL certificates managed by Garium',
-  'Docker containerisation and environment isolation',
-  '24-hour monitoring and uptime alerts',
-  'All model updates and security patches handled by Garium',
-  'Monthly performance and usage report',
+  {
+    icon: Shield,
+    title: 'Your own subdomain',
+    body: 'Your platform lives at ai.yourorganisation.com — or any subdomain you choose. No Garium branding visible to your team.',
+  },
+  {
+    icon: Lock,
+    title: 'Data that stays put',
+    body: 'Encrypted in transit and at rest. No third-party servers. No shared infrastructure. Your information does not leave your environment.',
+  },
+  {
+    icon: RefreshCw,
+    title: 'Always up to date',
+    body: 'We handle all AI model updates, security patches, and software upgrades. Your team always has the latest capability without any IT work.',
+  },
+  {
+    icon: BarChart2,
+    title: 'Monthly reports',
+    body: 'A clear monthly report showing platform usage, team activity, and recommendations for improving how your organisation uses AI.',
+  },
+  {
+    icon: AlertCircle,
+    title: 'Monitored around the clock',
+    body: 'We watch your platform 24 hours a day. If something needs attention, we fix it before it affects your team.',
+  },
+  {
+    icon: Users,
+    title: 'No per-seat pricing, ever',
+    body: 'Whether 3 people use the platform or 300, your monthly fee does not change. Grow your team without watching the invoice grow.',
+  },
 ]
 
 export function PricingClient() {
@@ -105,13 +129,19 @@ export function PricingClient() {
             <h2 className="text-2xl font-semibold text-black mb-8">What is included in every plan</h2>
           </AnimatedSection>
           <AnimatedSection delay={0.1}>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-10">
-              {INCLUDED_FEATURES.map(f => (
-                <div key={f} className="flex items-center gap-2.5 text-sm text-[#374151]">
-                  <Check className="w-4 h-4 text-[#072c8f] flex-shrink-0" aria-hidden />
-                  {f}
-                </div>
-              ))}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
+              {INCLUDED_FEATURES.map(f => {
+                const Icon = f.icon
+                return (
+                  <div key={f.title} className="flex flex-col gap-2 p-5 rounded-xl border border-[#D1D9E8] bg-[#F5F7FA]">
+                    <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center border border-[#D1D9E8]">
+                      <Icon className="w-4 h-4 text-[#072c8f]" aria-hidden />
+                    </div>
+                    <h3 className="text-sm font-semibold text-black">{f.title}</h3>
+                    <p className="text-xs text-[#374151] leading-relaxed">{f.body}</p>
+                  </div>
+                )
+              })}
             </div>
           </AnimatedSection>
         </div>

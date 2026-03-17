@@ -29,7 +29,21 @@ export function Footer() {
             <p className="text-sm text-[#a1b1df] leading-relaxed mb-3">
               Private AI infrastructure for organisations that believe their data belongs to them.
             </p>
-            <p className="text-xs text-[#728acf]">Lagos, Nigeria + Manchester, United Kingdom</p>
+
+            <div className="mt-4 space-y-4 text-xs text-[#728acf]">
+              <div>
+                <p className="font-semibold text-[#a1b1df] mb-1">Lagos, Nigeria</p>
+                <p>VeniaHub 8, The Providence St</p>
+                <p>Lekki Phase 1, Lagos 100252</p>
+                <p className="mt-1">Tel: +234 (0) 201 330 9154</p>
+              </div>
+              <div>
+                <p className="font-semibold text-[#a1b1df] mb-1">Manchester, United Kingdom</p>
+                <p>Bartle House, 9 Oxford Court</p>
+                <p>Manchester, England, M2 3WQ</p>
+                <p className="mt-1">Tel: +44 (0) 333 880 7775</p>
+              </div>
+            </div>
           </div>
 
           <div>
@@ -72,10 +86,26 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-[#1e2f5e] flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-[#728acf]">
-            &copy; 2026 Garium. Conqolx Technologies Company. All rights reserved.
-          </p>
+        <div className="mt-12 pt-8 border-t border-[#1e2f5e]">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="space-y-1">
+              <p className="text-xs text-[#728acf]">
+                &copy; 2026 Garium. Conqolx Technologies Limited. All Rights Reserved.
+              </p>
+              <p className="text-xs text-[#4a5568]">
+                Registered in the United Kingdom (RC: 14565201) and Nigeria (RC: 1775966).
+                All trademarks are the property of their respective owners.
+              </p>
+            </div>
+            <div>
+              <a
+                href="mailto:hello@garium.com"
+                className="text-xs text-[#728acf] hover:text-[#a1b1df] transition-colors"
+              >
+                hello@garium.com
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
