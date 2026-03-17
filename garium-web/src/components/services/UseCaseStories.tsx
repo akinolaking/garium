@@ -1,12 +1,11 @@
+import Link from 'next/link'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
-import { SectionLabel } from '@/components/ui/SectionLabel'
-import { Badge } from '@/components/ui/Badge'
+import { Button } from '@/components/ui/Button'
 
 const STORIES = [
   {
-    eyebrow: 'Secondary school, 180 students, 22 teachers',
+    eyebrow: 'Secondary school — 180 students, 22 teachers — Plan: Seed',
     headline: 'The school wanted AI for learning. Not data risk.',
-    plan: 'Seed',
     body: [
       'The school needed AI for students and teachers. Consumer tools were off the table — child data protection requirements ruled them out immediately.',
       'Teachers needed a tool for lesson planning and content generation. Students needed a research assistant. Both groups needed different access levels to the same infrastructure.',
@@ -15,9 +14,8 @@ const STORIES = [
     ],
   },
   {
-    eyebrow: 'PR and digital agency, 5 staff, 8 client campaigns',
+    eyebrow: 'PR and digital agency — 5 staff, 8 campaigns — Plan: Build',
     headline: 'Five people running eight campaigns. One platform they actually control.',
-    plan: 'Build',
     body: [
       'The agency had a problem that is common in creative businesses. Every staff member was using AI tools. No two people were using the same one.',
       'Client briefs, campaign strategies, and media contacts were being typed into consumer tools with no regard for confidentiality. When a client asked whether their campaign strategy had ever been processed by OpenAI, the agency had no good answer.',
@@ -33,24 +31,25 @@ export function UseCaseStories() {
       <div className="container-garium">
         <AnimatedSection>
           <div className="text-center mb-16">
-            <SectionLabel className="mb-5 block">Real deployments</SectionLabel>
-            <h2 className="font-semibold text-black" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: '1.15', letterSpacing: '-0.02em' }}>
+            <p className="eyebrow mb-5 block">Real deployments</p>
+            <h2 className="font-semibold text-black text-balance" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: '1.15', letterSpacing: '-0.02em' }}>
               How organisations use Garium.
             </h2>
           </div>
         </AnimatedSection>
 
-        <div className="space-y-12">
+        <div className="space-y-16">
           {STORIES.map((story, i) => (
-            <AnimatedSection key={i} delay={i * 0.1}>
-              <div className={`grid lg:grid-cols-2 gap-10 items-start ${i % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+            <AnimatedSection key={i} delay={0.1}>
+              <div className={`grid lg:grid-cols-2 gap-10 items-start`}>
                 <div className={i % 2 === 1 ? 'lg:order-2' : ''}>
                   <p className="eyebrow mb-4">{story.eyebrow}</p>
-                  <h3 className="text-2xl font-semibold text-black mb-4 text-balance">{story.headline}</h3>
-                  <div className="flex items-center gap-2 mb-6">
-                    <span className="text-sm text-[#6B7280]">Plan:</span>
-                    <Badge variant="featured">{story.plan}</Badge>
-                  </div>
+                  <h3 className="text-2xl font-semibold text-black mb-6 text-balance">{story.headline}</h3>
+                  <Link href="/pricing">
+                    <Button variant="outline" size="md" aria-label="See our plans">
+                      See our plans
+                    </Button>
+                  </Link>
                 </div>
                 <div className={`space-y-4 ${i % 2 === 1 ? 'lg:order-1' : ''}`}>
                   {story.body.map((para, j) => (

@@ -1,5 +1,5 @@
+import Link from 'next/link'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
-import { SectionLabel } from '@/components/ui/SectionLabel'
 import { Server, Settings, Lock } from 'lucide-react'
 
 const PILLARS = [
@@ -25,11 +25,14 @@ export function SolutionSection() {
     <section className="section-pad bg-white">
       <div className="container-garium">
         <AnimatedSection>
-          <div className="max-w-[680px] mx-auto text-center mb-16">
-            <SectionLabel className="mb-5 block">What we do</SectionLabel>
+          <div className="max-w-[680px] mx-auto text-center mb-14">
+            <p className="eyebrow mb-5 block">What we do</p>
             <h2 className="font-semibold text-black text-balance" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: '1.15', letterSpacing: '-0.02em' }}>
               A complete AI platform, deployed on dedicated infrastructure, running entirely within your control.
             </h2>
+            <p className="text-[#374151] text-lg leading-relaxed mt-5">
+              Deploy a private AI platform for your organisation. Your team gets the same capability as the shared tools. Your data stays inside your environment. You pay a flat monthly fee regardless of how many people use it.
+            </p>
           </div>
         </AnimatedSection>
 
@@ -38,9 +41,9 @@ export function SolutionSection() {
             const Icon = p.icon
             return (
               <AnimatedSection key={p.title} delay={i * 0.1}>
-                <div className="flex flex-col gap-4 p-8 rounded-xl border border-[#D1D9E8] bg-[#F5F7FA] h-full hover:shadow-[0_4px_16px_0_rgba(8,28,82,0.12)] hover:scale-[1.01] transition-all duration-350">
-                  <div className="w-10 h-10 rounded-lg bg-[#eef1f9] flex items-center justify-center">
-                    <Icon className="w-5 h-5 text-[#072c8f]" />
+                <div className="flex flex-col gap-4 p-8 rounded-xl border border-[#D1D9E8] bg-[#F5F7FA] h-full hover:shadow-[0_4px_16px_0_rgba(8,28,82,0.12)] hover:scale-[1.01] transition-all duration-[350ms]">
+                  <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center border border-[#D1D9E8]">
+                    <Icon className="w-5 h-5 text-[#072c8f]" aria-hidden />
                   </div>
                   <h3 className="text-lg font-semibold text-black">{p.title}</h3>
                   <p className="text-[#374151] text-base leading-relaxed">{p.description}</p>
@@ -49,6 +52,17 @@ export function SolutionSection() {
             )
           })}
         </div>
+
+        <AnimatedSection delay={0.4}>
+          <div className="text-center mt-10">
+            <Link
+              href="/services"
+              className="text-sm font-semibold text-[#072c8f] hover:underline inline-flex items-center gap-1"
+            >
+              See all platform services →
+            </Link>
+          </div>
+        </AnimatedSection>
       </div>
     </section>
   )
