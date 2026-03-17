@@ -1,7 +1,6 @@
 {
-  "framework": "nextjs",
-  "rootDirectory": "garium-web",
-  "buildCommand": "npm run build",
-  "installCommand": "npm install",
-  "outputDirectory": ".next"
+    "framework": "nextjs",
+    "buildCommand": "npm run build",
+    "installCommand": "npm install",
+    "outputDirectory": ".next"
 }
