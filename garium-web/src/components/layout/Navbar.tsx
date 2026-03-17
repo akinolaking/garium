@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { Menu } from 'lucide-react'
 import { useScrolled } from '@/hooks/useScrolled'
 import { useMobileMenu } from '@/hooks/useMobileMenu'
-import { useCurrency } from '@/hooks/useCurrency'
 import { GariumLogo } from '@/components/ui/GariumLogo'
 import { Button } from '@/components/ui/Button'
 import { CurrencySwitcher } from '@/components/ui/CurrencySwitcher'
@@ -20,7 +19,6 @@ const NAV_LINKS = [
 export function Navbar() {
   const scrolled = useScrolled(20)
   const { isOpen, open, close } = useMobileMenu()
-  const { currency, setCurrency } = useCurrency()
 
   return (
     <>
@@ -61,11 +59,7 @@ export function Navbar() {
               </div>
 
               <div className="hidden md:flex items-center gap-3">
-                <CurrencySwitcher
-                  currency={currency}
-                  onCurrencyChange={setCurrency}
-                  light={!scrolled}
-                />
+                <CurrencySwitcher light={!scrolled} />
                 <Link href="/contact">
                   <Button
                     variant={scrolled ? 'primary' : 'outline-light'}

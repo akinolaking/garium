@@ -25,7 +25,7 @@ const INCLUDED_FEATURES = [
 
 export function PricingClient() {
   const { segment, setSegment } = usePlanToggle()
-  const { currency, rates, setCurrency } = useCurrency()
+  const { currency, rates } = useCurrency()
   const [billing, setBilling] = useState<BillingCycle>('monthly')
   const plans = segment === 'sme' ? SME_PLANS : ENTERPRISE_PLANS
 
@@ -37,7 +37,7 @@ export function PricingClient() {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
               <p className="text-xs font-medium text-[#6B7280] uppercase tracking-widest mb-2">View prices in:</p>
-              <CurrencySwitcher currency={currency} onCurrencyChange={setCurrency} />
+              <CurrencySwitcher />
             </div>
             <AnnualToggle billing={billing} onChange={setBilling} />
           </div>

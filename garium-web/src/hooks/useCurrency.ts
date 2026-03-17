@@ -3,15 +3,30 @@ import { useState, useEffect } from 'react'
 import type { Currency } from '@/lib/currency'
 import { FALLBACK_RATES } from '@/lib/currency'
 
+const STORAGE_KEY = 'garium-currency'
+const EVENT_KEY = 'garium-currency-change'
+
 export function useCurrency() {
-  const [currency, setCurrency] = useState<Currency>('USD')
+  const [currency, setCurrencyState] = useState<Currency>('USD')
   const [rates, setRates] = useState(FALLBACK_RATES)
 
+  // Hydrate from localStorage on mount
   useEffect(() => {
-    const saved = localStorage.getItem('garium-currency') as Currency | null
-    if (saved && ['USD', 'GBP', 'NGN'].includes(saved)) setCurrency(saved)
+    const saved = localStorage.getItem(STORAGE_KEY) as Currency | null
+    if (saved && ['USD', 'GBP', 'NGN'].includes(saved)) setCurrencyState(saved)
   }, [])
 
+  // Sync across multiple useCurrency instances on the same page
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const detail = (e as CustomEvent<Currency>).detail
+      if (detail) setCurrencyState(detail)
+    }
+    window.addEventListener(EVENT_KEY, handler)
+    return () => window.removeEventListener(EVENT_KEY, handler)
+  }, [])
+
+  // Fetch live exchange rates
   useEffect(() => {
     fetch('https://api.frankfurter.app/latest?from=USD&to=GBP,NGN')
       .then(r => r.json())
@@ -23,10 +38,11 @@ export function useCurrency() {
       .catch(() => {})
   }, [])
 
-  const handleSetCurrency = (c: Currency) => {
-    setCurrency(c)
-    localStorage.setItem('garium-currency', c)
+  const setCurrency = (c: Currency) => {
+    setCurrencyState(c)
+    localStorage.setItem(STORAGE_KEY, c)
+    window.dispatchEvent(new CustomEvent(EVENT_KEY, { detail: c }))
   }
 
-  return { currency, rates, setCurrency: handleSetCurrency }
+  return { currency, rates, setCurrency }
 }
