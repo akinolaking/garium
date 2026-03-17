@@ -1,5 +1,4 @@
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
-import { SectionLabel } from '@/components/ui/SectionLabel'
 
 const STEPS = [
   {
@@ -25,31 +24,23 @@ export function HowItWorks() {
       <div className="container-garium">
         <AnimatedSection>
           <div className="text-center mb-16">
-            <SectionLabel className="mb-5 block">How it works</SectionLabel>
-            <h2 className="font-semibold text-black" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: '1.15', letterSpacing: '-0.02em' }}>
+            <p className="eyebrow mb-5 block">How it works</p>
+            <h2 className="font-semibold text-black text-balance" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: '1.15', letterSpacing: '-0.02em' }}>
               Three steps from contract to live platform.
             </h2>
           </div>
         </AnimatedSection>
 
-        <div className="relative">
-          <div className="hidden lg:block absolute top-10 left-[calc(16.67%+1.5rem)] right-[calc(16.67%+1.5rem)] h-px bg-[#D1D9E8]" />
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {STEPS.map((step, i) => (
-              <AnimatedSection key={step.number} delay={i * 0.15}>
-                <div className="relative flex flex-col gap-5 pt-4">
-                  <div className="relative z-10 w-20 h-20 rounded-full bg-white border-2 border-[#D1D9E8] flex items-center justify-center mx-auto lg:mx-0">
-                    <span className="text-2xl font-bold text-[#081c52]">{step.number}</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-black mb-3">{step.title}</h3>
-                    <p className="text-[#374151] text-base leading-relaxed">{step.description}</p>
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
+        <div className="grid md:grid-cols-3 gap-8">
+          {STEPS.map((step, i) => (
+            <AnimatedSection key={step.number} delay={i * 0.15}>
+              <div className="bg-white border border-[#D1D9E8] rounded-xl p-8 h-full">
+                <span className="text-5xl font-bold text-[#081c52] block mb-5 leading-none">{step.number}</span>
+                <h3 className="text-lg font-semibold text-black mb-3">{step.title}</h3>
+                <p className="text-[#374151] text-base leading-relaxed">{step.description}</p>
+              </div>
+            </AnimatedSection>
+          ))}
         </div>
       </div>
     </section>

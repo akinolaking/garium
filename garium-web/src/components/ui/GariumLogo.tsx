@@ -16,17 +16,28 @@ export function GariumLogo({
   animate = false,
   className,
 }: GariumLogoProps) {
-  const iconSizes = { sm: 24, md: 32, lg: 48 }
-  const textSizes = { sm: 'text-base', md: 'text-xl', lg: 'text-3xl' }
+  const iconSizes = { sm: 22, md: 28, lg: 42 }
+  const textSizes = { sm: '1rem', md: '1.25rem', lg: '1.875rem' }
   const iconSize = iconSizes[size]
 
   return (
     <div className={cn('flex items-center gap-2', className)}>
-      <CrystalIcon size={iconSize} color={color} animate={animate} />
+      <CrystalIcon
+        size={iconSize}
+        color={color}
+        animate={animate}
+        aria-label="Garium logo — crystal cluster mark"
+      />
       {showWordmark && (
         <span
-          className={cn('font-bold tracking-tight leading-none', textSizes[size])}
-          style={{ color, fontFamily: "'Courier New', 'Courier', monospace" }}
+          style={{
+            color,
+            fontFamily: 'Inter, ui-sans-serif, system-ui, sans-serif',
+            fontWeight: 600,
+            fontSize: textSizes[size],
+            letterSpacing: '-0.02em',
+            lineHeight: 1,
+          }}
         >
           Garium
         </span>

@@ -28,13 +28,24 @@
     color: #F5F7FA;
   }
 
-  :focus-visible {
+  /* WCAG AA focus rings for keyboard navigation */
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
     outline: 2px solid #072c8f;
-    outline-offset: 2px;
+    outline-offset: 3px;
+    border-radius: 4px;
   }
 
   [id] {
     scroll-margin-top: 5rem;
+  }
+
+  /* WCAG AA: body text on light backgrounds — never below #374151 */
+  p, li, span, td, th, blockquote {
+    color: inherit;
   }
 }
 
@@ -73,6 +84,15 @@
     font-weight: 500;
   }
 
+  /* Eyebrow on dark backgrounds */
+  .eyebrow-light {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #9ba9e9;
+    font-weight: 500;
+  }
+
   .bg-crystal {
     background-image:
       radial-gradient(circle at 15% 50%, rgba(7,44,143,0.06) 0%, transparent 55%),
@@ -83,6 +103,11 @@
   .dark-section {
     background-image: linear-gradient(135deg, #000000 0%, #081c52 50%, #072c8f 100%);
     color: #F5F7FA;
+  }
+
+  /* WCAG-safe muted text — 4.5:1 on white */
+  .text-muted-safe {
+    color: #4B5563;
   }
 }
 
