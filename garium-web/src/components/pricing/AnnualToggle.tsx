@@ -9,7 +9,7 @@ interface AnnualToggleProps {
 
 export function AnnualToggle({ billing, onChange }: AnnualToggleProps) {
   return (
-    <div className="flex items-center justify-center gap-3">
+    <div className="flex items-center gap-3">
       <button
         onClick={() => onChange('monthly')}
         className={cn(
@@ -23,8 +23,8 @@ export function AnnualToggle({ billing, onChange }: AnnualToggleProps) {
       <button
         onClick={() => onChange(billing === 'monthly' ? 'annual' : 'monthly')}
         aria-label="Toggle billing cycle"
-        className="relative w-12 h-6 rounded-pill bg-[#D1D9E8] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#072c8f]"
-        style={{ backgroundColor: billing === 'annual' ? '#072c8f' : undefined }}
+        className="relative w-12 h-6 rounded-full transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#072c8f]"
+        style={{ backgroundColor: billing === 'annual' ? '#072c8f' : '#D1D9E8' }}
       >
         <span
           className={cn(
@@ -42,7 +42,7 @@ export function AnnualToggle({ billing, onChange }: AnnualToggleProps) {
         )}
       >
         Annual
-        <span className="px-2 py-0.5 rounded-pill text-xs font-semibold bg-green-100 text-green-800">
+        <span className="bg-green-100 text-green-800 text-xs font-semibold px-2 py-0.5 rounded-full">
           Save 15%
         </span>
       </button>
