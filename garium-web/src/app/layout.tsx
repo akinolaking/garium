@@ -4,6 +4,7 @@ import { AnnouncementBar } from '@/components/layout/AnnouncementBar'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { CookieBanner } from '@/components/ui/CookieBanner'
+import { ScrollToTop } from '@/components/ui/ScrollToTop'
 import { Analytics } from '@vercel/analytics/react'
 
 export const metadata: Metadata = {
@@ -76,6 +77,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="main-content">{children}</main>
         <Footer />
         <CookieBanner />
+        <ScrollToTop />
         <Analytics />
       </body>
     </html>

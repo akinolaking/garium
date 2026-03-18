@@ -5,7 +5,7 @@ import { ArchitectureDiagram } from '@/components/services/ArchitectureDiagram'
 import { ServicesUseCaseAccordion } from '@/components/services/ServicesUseCaseAccordion'
 import { PartnersSection } from '@/components/ui/PartnersSection'
 import { TestimonialSection } from '@/components/ui/TestimonialSection'
-import { ServicesCTA } from '@/components/services/ServicesCTA'
+import { PreFooterCTA } from '@/components/ui/PreFooterCTA'
 import { TESTIMONIALS } from '@/lib/testimonials'
 
 export const metadata = generatePageMetadata({
@@ -23,7 +23,7 @@ export default function ServicesPage() {
       <PartnersSection />
       <ServicesUseCaseAccordion />
       <TestimonialSection testimonials={TESTIMONIALS.slice(0, 3)} heading="What our clients say." />
-      <ServicesCTA />
+      <PreFooterCTA />
     </>
   )
 }

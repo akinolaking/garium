@@ -5,10 +5,11 @@ import { VisionMission } from '@/components/about/VisionMission'
 import { BeliefsSection } from '@/components/about/BeliefsSection'
 import { TeamSection } from '@/components/about/TeamSection'
 import { TechPartners } from '@/components/about/TechPartners'
+import { PreFooterCTA } from '@/components/ui/PreFooterCTA'
 
 export const metadata = generatePageMetadata({
   title: 'About Garium — Our Story and Mission',
-  description: 'Named after garri. Built on the same principle. Garium is private AI infrastructure for organisations in Nigeria and the United Kingdom.',
+  description: 'Named after garri. Built on the same principle. Garium is private AI infrastructure for organisations that believe their data belongs to them.',
   path: '/about',
 })
 
@@ -21,6 +22,7 @@ export default function AboutPage() {
       <BeliefsSection />
       <TeamSection />
       <TechPartners />
+      <PreFooterCTA />
     </>
   )
 }

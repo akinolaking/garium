@@ -10,13 +10,18 @@ export interface Plan {
   setupUSD: number
   monthlyUSD: number
   annualUSD: number
+  minimumTermMonths: number
+  firstPaymentUSD: number
   gpu: string
   vram: string
   gpuColor: string
   userLimit: string
+  userCount: number
   features: string[]
   interfaces: string[]
   featured: boolean
   isSME: boolean
   targetSectors: string[]
+  aiModels: string[]
+  concurrentSessions: number
 }

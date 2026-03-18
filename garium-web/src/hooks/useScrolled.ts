@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 
-export function useScrolled(threshold = 10) {
+export function useScrolled(threshold = 1) {
   const [scrolled, setScrolled] = useState(false)
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > threshold)

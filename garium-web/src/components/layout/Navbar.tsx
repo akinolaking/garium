@@ -17,7 +17,7 @@ const NAV_LINKS = [
 ]
 
 export function Navbar() {
-  const scrolled = useScrolled(20)
+  const scrolled = useScrolled(1)
   const { isOpen, open, close } = useMobileMenu()
 
   return (
