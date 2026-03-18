@@ -5,15 +5,15 @@ const LOCATIONS = [
   {
     city: 'Manchester',
     country: 'United Kingdom',
-    role: 'Technical delivery, UK market',
-    address: 'Manchester, England',
+    role: 'UKI Head Office',
+    address: 'Bartle House, 9 Oxford Court, Manchester, M2 3WQ',
     email: 'hello@garium.co',
   },
   {
     city: 'Lagos',
     country: 'Nigeria',
-    role: 'Founder office, Africa market',
-    address: 'Lagos, Nigeria',
+    role: 'Africa Head Office',
+    address: 'VeniaHub 8, The Providence St, Lekki Phase 1, Lagos 100252',
     email: 'hello@garium.co',
   },
 ]

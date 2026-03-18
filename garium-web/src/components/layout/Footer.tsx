@@ -145,12 +145,10 @@ export function Footer() {
               <div>
                 <p className="font-medium mb-1" style={{ color: 'rgba(255,255,255,0.35)' }}>Lagos, Nigeria</p>
                 <p>VeniaHub 8, The Providence St, Lekki Phase 1, Lagos 100252</p>
-                <p>Tel: +234 (0) 201 330 9154</p>
               </div>
               <div>
                 <p className="font-medium mb-1" style={{ color: 'rgba(255,255,255,0.35)' }}>Manchester, United Kingdom</p>
                 <p>Bartle House, 9 Oxford Court, Manchester, M2 3WQ</p>
-                <p>Tel: +44 (0) 333 880 7775</p>
               </div>
             </div>
           </div>
