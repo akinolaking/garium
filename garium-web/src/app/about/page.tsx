@@ -20,7 +20,7 @@ export default function AboutPage() {
       <BrandStory />
       <VisionMission />
       <BeliefsSection />
-      <TeamSection />
+      {/* <TeamSection /> */}
       <TechPartners />
       <PreFooterCTA />
     </>

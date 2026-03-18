@@ -21,6 +21,9 @@ export function Navbar() {
     <>
       <header
         style={{
+          position: 'sticky',
+          top: 0,
+          zIndex: 50,
           width: '100%',
           background: '#ffffff',
           borderBottom: '1px solid #D1D9E8',

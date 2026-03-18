@@ -20,8 +20,8 @@ const BELIEFS = [
   },
   {
     number: '04',
-    statement: 'Africa deserves the same infrastructure standards as anywhere else.',
-    description: 'We do not offer a reduced service for Nigerian and West African clients. The same GPU infrastructure, the same deployment standards, the same support.',
+    statement: 'Same infrastructure standards as anywhere else.',
+    description: 'We do not offer a reduced service for clients. The same GPU infrastructure, the same deployment standards, the same support applies to all clients worldwide.',
   },
 ]
 

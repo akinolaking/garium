@@ -26,7 +26,7 @@ export function ProblemSection() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.1}>
-          <div style={{ maxWidth: '840px', margin: '0 auto' }}>
+          <div style={{ maxWidth: '840px', margin: '0 auto', textAlign: 'center' }}>
             <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#374151', marginBottom: '20px' }}>
               Client contracts. Internal strategies. Financial data. Patient records.
               Every query your team sends to a third-party AI tool is processed on
