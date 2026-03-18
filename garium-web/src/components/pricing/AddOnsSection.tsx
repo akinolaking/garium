@@ -1,4 +1,7 @@
+'use client'
 import { AnimatedBackground } from '@/components/ui/AnimatedBackground'
+import { useCurrency } from '@/hooks/useCurrency'
+import { convertPrice, formatPrice } from '@/lib/currency'
 
 const ADD_ONS = [
   {
@@ -49,6 +52,8 @@ const ADD_ONS = [
 ]
 
 export function AddOnsSection() {
+  const { currency, rates } = useCurrency()
+
   return (
     <section style={{ padding: '80px 0', background: '#F5F7FA', position: 'relative', overflow: 'hidden' }}>
       <AnimatedBackground variant="grid" opacity={0.4} />
@@ -61,44 +66,47 @@ export function AddOnsSection() {
           Add capabilities to any plan. Priced monthly. Cancel or adjust anytime.
         </p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
-          {ADD_ONS.map(addon => (
-            <div key={addon.id} style={{
-              background: '#ffffff',
-              border: '1px solid rgba(8,28,82,0.1)',
-              borderRadius: '16px',
-              padding: '28px 32px',
-              boxShadow: '0 2px 16px rgba(8,28,82,0.06)',
-            }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
-                <div>
-                  <p style={{ fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: addon.color, marginBottom: '4px' }}>
-                    {addon.techName}
-                  </p>
-                  <h3 style={{ fontSize: '1.125rem', fontWeight: 500, color: '#081c52' }}>
-                    {addon.name}
-                  </h3>
+          {ADD_ONS.map(addon => {
+            const displayPrice = formatPrice(convertPrice(addon.priceFrom, currency, rates), currency)
+            return (
+              <div key={addon.id} style={{
+                background: '#ffffff',
+                border: '1px solid rgba(8,28,82,0.1)',
+                borderRadius: '16px',
+                padding: '28px 32px',
+                boxShadow: '0 2px 16px rgba(8,28,82,0.06)',
+              }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
+                  <div>
+                    <p style={{ fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: addon.color, marginBottom: '4px' }}>
+                      {addon.techName}
+                    </p>
+                    <h3 style={{ fontSize: '1.125rem', fontWeight: 500, color: '#081c52' }}>
+                      {addon.name}
+                    </h3>
+                  </div>
+                  <div style={{ background: 'rgba(8,28,82,0.06)', borderRadius: '8px', padding: '6px 12px', flexShrink: 0 }}>
+                    <p style={{ fontSize: '0.6875rem', color: '#6b7280' }}>from</p>
+                    <p style={{ fontSize: '1rem', fontWeight: 600, color: '#081c52' }}>{displayPrice}/mo</p>
+                  </div>
                 </div>
-                <div style={{ background: 'rgba(8,28,82,0.06)', borderRadius: '8px', padding: '6px 12px', flexShrink: 0 }}>
-                  <p style={{ fontSize: '0.6875rem', color: '#6b7280' }}>from</p>
-                  <p style={{ fontSize: '1rem', fontWeight: 600, color: '#081c52' }}>${addon.priceFrom}/mo</p>
-                </div>
+                <p style={{ fontSize: '0.9375rem', color: '#374151', lineHeight: 1.65, marginBottom: '20px' }}>
+                  {addon.description}
+                </p>
+                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 20px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  {addon.features.map(f => (
+                    <li key={f} style={{ display: 'flex', gap: '8px', fontSize: '0.875rem', color: '#374151' }}>
+                      <span style={{ color: addon.color, flexShrink: 0 }}>→</span>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <p style={{ fontSize: '0.75rem', color: '#9ca3af', borderTop: '1px solid rgba(8,28,82,0.07)', paddingTop: '12px' }}>
+                  Available on: {addon.availableOn.join(', ')}
+                </p>
               </div>
-              <p style={{ fontSize: '0.9375rem', color: '#374151', lineHeight: 1.65, marginBottom: '20px' }}>
-                {addon.description}
-              </p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 20px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                {addon.features.map(f => (
-                  <li key={f} style={{ display: 'flex', gap: '8px', fontSize: '0.875rem', color: '#374151' }}>
-                    <span style={{ color: addon.color, flexShrink: 0 }}>→</span>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <p style={{ fontSize: '0.75rem', color: '#9ca3af', borderTop: '1px solid rgba(8,28,82,0.07)', paddingTop: '12px' }}>
-                Available on: {addon.availableOn.join(', ')}
-              </p>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>

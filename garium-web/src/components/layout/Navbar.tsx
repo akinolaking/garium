@@ -32,8 +32,9 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', check)
   }, [])
 
-  // On home page: transparent until scrolled (dark hero). On all other pages: always solid.
-  const isScrolled = !isHomePage || (mounted && scrolled)
+  // On home page: solid white until hydrated (prevents flash), then transparent until scrolled.
+  // On all other pages: always solid white.
+  const isScrolled = !isHomePage || !mounted || scrolled
 
   return (
     <>

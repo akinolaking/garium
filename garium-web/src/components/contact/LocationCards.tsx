@@ -1,5 +1,5 @@
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
-import { MapPin, Phone, Mail } from 'lucide-react'
+import { MapPin, Mail } from 'lucide-react'
 
 const LOCATIONS = [
   {
@@ -7,16 +7,14 @@ const LOCATIONS = [
     country: 'United Kingdom',
     role: 'Technical delivery, UK market',
     address: 'Manchester, England',
-    phone: '+44 000 000 0000',
-    email: 'uk@garium.com',
+    email: 'hello@garium.co',
   },
   {
     city: 'Lagos',
     country: 'Nigeria',
     role: 'Founder office, Africa market',
     address: 'Lagos, Nigeria',
-    phone: '+234 000 000 0000',
-    email: 'ng@garium.com',
+    email: 'hello@garium.co',
   },
 ]
 
@@ -57,12 +55,8 @@ export function LocationCards() {
                     {loc.address}
                   </div>
                   <div className="flex items-center gap-2 text-sm text-[#374151]">
-                    <Phone className="w-3.5 h-3.5 text-[#6B7280]" />
-                    <a href={`tel:${loc.phone.replace(/\s/g, '')}`} className="hover:text-[#072c8f] transition-colors">{loc.phone}</a>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-[#374151]">
                     <Mail className="w-3.5 h-3.5 text-[#6B7280]" />
-                    <a href={`mailto:${loc.email}`} className="hover:text-[#072c8f] transition-colors">{loc.email}</a>
+                    <a href={`mailto:${loc.email}`} className="hover:text-[#072c8f] transition-colors">Send us a mail</a>
                   </div>
                 </div>
               </div>
