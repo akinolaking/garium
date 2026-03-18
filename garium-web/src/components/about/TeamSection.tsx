@@ -1,4 +1,5 @@
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
+import { AnimatedBackground } from '@/components/ui/AnimatedBackground'
 import { MapPin } from 'lucide-react'
 
 const TEAM = [
@@ -20,8 +21,9 @@ const TEAM = [
 
 export function TeamSection() {
   return (
-    <section className="section-pad bg-[#EDF0F7]">
-      <div className="container-garium">
+    <section className="section-pad bg-[#EDF0F7]" style={{ position: 'relative', overflow: 'hidden' }}>
+      <AnimatedBackground variant="curves" position="center" opacity={0.3} />
+      <div className="container-garium" style={{ position: 'relative', zIndex: 1 }}>
         <AnimatedSection>
           <div className="text-center mb-14">
             <p className="eyebrow mb-5 block">The team</p>

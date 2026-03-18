@@ -4,6 +4,7 @@ import { ContactOptions } from '@/components/contact/ContactOptions'
 import { FilloutEmbed } from '@/components/contact/FilloutEmbed'
 import { LocationCards } from '@/components/contact/LocationCards'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
+import { AnimatedBackground } from '@/components/ui/AnimatedBackground'
 
 export const metadata = generatePageMetadata({
   title: 'Contact — Book a Consultation',
@@ -16,8 +17,9 @@ export default function ContactPage() {
     <>
       <ContactHero />
       <ContactOptions />
-      <section id="consultation-form" className="section-pad bg-white">
-        <div className="container-garium">
+      <section id="consultation-form" className="section-pad bg-white" style={{ position: 'relative', overflow: 'hidden' }}>
+        <AnimatedBackground variant="curves" position="right" opacity={0.35} />
+        <div className="container-garium" style={{ position: 'relative', zIndex: 1 }}>
           <AnimatedSection>
             <div className="max-w-[800px] mx-auto">
               <h2 className="text-2xl font-semibold text-black mb-2 text-center">Book your consultation</h2>

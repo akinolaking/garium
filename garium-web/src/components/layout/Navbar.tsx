@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
 import { Menu } from 'lucide-react'
-import { useScrolled } from '@/hooks/useScrolled'
 import { useMobileMenu } from '@/hooks/useMobileMenu'
 import { GariumLogo } from '@/components/ui/GariumLogo'
 import { Button } from '@/components/ui/Button'
@@ -17,15 +17,27 @@ const NAV_LINKS = [
 ]
 
 export function Navbar() {
-  const scrolled = useScrolled(1)
+  const [scrolled, setScrolled] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const { isOpen, open, close } = useMobileMenu()
+
+  useEffect(() => {
+    setMounted(true)
+    const check = () => setScrolled(window.scrollY > 1)
+    check()
+    window.addEventListener('scroll', check, { passive: true })
+    return () => window.removeEventListener('scroll', check)
+  }, [])
+
+  // Before mount: transparent (matches dark hero on SSR/initial paint)
+  const isScrolled = mounted && scrolled
 
   return (
     <>
       <header
         className={cn(
           'sticky top-0 z-[200] w-full transition-all duration-[350ms]',
-          scrolled
+          isScrolled
             ? 'bg-white border-b border-[#D1D9E8] shadow-[0_1px_3px_0_rgba(8,28,82,0.08)]'
             : 'bg-transparent'
         )}
@@ -36,7 +48,7 @@ export function Navbar() {
               <Link href="/" aria-label="Garium home">
                 <GariumLogo
                   size="md"
-                  color={scrolled ? '#081c52' : '#F5F7FA'}
+                  color={isScrolled ? '#081c52' : '#F5F7FA'}
                   animate={false}
                 />
               </Link>
@@ -48,7 +60,7 @@ export function Navbar() {
                     href={link.href}
                     className={cn(
                       'px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200',
-                      scrolled
+                      isScrolled
                         ? 'text-black hover:text-[#072c8f] hover:bg-[#eef1f9]'
                         : 'text-white/90 hover:text-white hover:bg-white/10'
                     )}
@@ -59,10 +71,10 @@ export function Navbar() {
               </div>
 
               <div className="hidden md:flex items-center gap-3">
-                <CurrencySwitcher light={!scrolled} />
+                <CurrencySwitcher light={!isScrolled} />
                 <Link href="/contact">
                   <Button
-                    variant={scrolled ? 'primary' : 'outline-light'}
+                    variant={isScrolled ? 'primary' : 'outline-light'}
                     size="sm"
                     aria-label="Book a consultation"
                   >
@@ -76,7 +88,7 @@ export function Navbar() {
                 aria-label="Open menu"
                 className={cn(
                   'md:hidden p-2 rounded-lg transition-colors',
-                  scrolled ? 'text-[#081c52] hover:bg-[#eef1f9]' : 'text-white hover:bg-white/10'
+                  isScrolled ? 'text-[#081c52] hover:bg-[#eef1f9]' : 'text-white hover:bg-white/10'
                 )}
               >
                 <Menu className="w-6 h-6" />

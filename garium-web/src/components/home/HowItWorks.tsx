@@ -1,5 +1,6 @@
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { CrystalBackground } from '@/components/ui/CrystalBackground'
+import { AnimatedBackground } from '@/components/ui/AnimatedBackground'
 
 const STEPS = [
   {
@@ -23,6 +24,7 @@ export function HowItWorks() {
   return (
     <section id="how-it-works" className="section-pad bg-[#EDF0F7] relative overflow-hidden">
       <CrystalBackground opacity={0.04} />
+      <AnimatedBackground variant="dots" opacity={0.4} />
       <div className="container-garium">
         <AnimatedSection>
           <div className="text-center mb-16">

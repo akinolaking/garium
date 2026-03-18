@@ -1,10 +1,12 @@
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { SectionLabel } from '@/components/ui/SectionLabel'
+import { AnimatedBackground } from '@/components/ui/AnimatedBackground'
 
 export function VisionMission() {
   return (
-    <section className="section-pad bg-[#EDF0F7]">
-      <div className="container-garium">
+    <section className="section-pad bg-[#EDF0F7]" style={{ position: 'relative', overflow: 'hidden' }}>
+      <AnimatedBackground variant="rings" opacity={0.4} />
+      <div className="container-garium" style={{ position: 'relative', zIndex: 1 }}>
         <AnimatedSection>
           <div className="text-center mb-14">
             <SectionLabel className="mb-5 block">What drives us</SectionLabel>

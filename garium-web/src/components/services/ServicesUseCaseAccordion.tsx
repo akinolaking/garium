@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { AnimatedBackground } from '@/components/ui/AnimatedBackground'
 
 interface UseCase {
   id: string
@@ -78,7 +79,8 @@ export function ServicesUseCaseAccordion() {
   const active = USE_CASES.find(u => u.id === activeId) ?? USE_CASES[0]
 
   return (
-    <section style={{ padding: '80px 0', background: '#F5F7FA' }}>
+    <section style={{ padding: '80px 0', background: '#F5F7FA', position: 'relative', overflow: 'hidden' }}>
+      <AnimatedBackground variant="curves" position="right" opacity={0.3} />
       <div className="container-garium">
         <div style={{ marginBottom: '56px' }}>
           <p className="eyebrow" style={{ display: 'block', marginBottom: '20px' }}>Use cases</p>
@@ -94,7 +96,7 @@ export function ServicesUseCaseAccordion() {
           </h2>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '24px' }} className="lg:grid-cols-[1fr_420px]">
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '24px', position: 'relative', zIndex: 1 }} className="lg:grid-cols-[1fr_420px]">
 
           {/* Left: accordion list */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
@@ -157,21 +159,22 @@ export function ServicesUseCaseAccordion() {
 
                   <div
                     style={{
-                      maxHeight: isOpen ? '300px' : '0',
+                      maxHeight: isOpen ? '400px' : '0',
                       overflow: 'hidden',
                       transition: 'max-height 0.35s ease',
                     }}
                   >
-                    <p
-                      style={{
-                        padding: '0 24px 24px',
-                        fontSize: '0.9375rem',
-                        lineHeight: 1.7,
-                        color: '#374151',
-                      }}
-                    >
-                      {uc.description}
-                    </p>
+                    <div style={{ padding: '0 24px 16px' }}>
+                      <p style={{ fontSize: '0.9375rem', lineHeight: 1.7, color: '#374151', marginBottom: '12px' }}>
+                        {uc.description}
+                      </p>
+                      <a
+                        href={`/contact?sector=${uc.id}`}
+                        style={{ fontSize: '0.875rem', color: '#072c8f', fontWeight: 500, textDecoration: 'none' }}
+                      >
+                        Talk to us about {uc.title.split(' ')[0].toLowerCase()} →
+                      </a>
+                    </div>
                   </div>
                 </div>
               )

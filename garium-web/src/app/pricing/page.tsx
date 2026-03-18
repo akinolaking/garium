@@ -2,6 +2,7 @@ import { Suspense } from 'react'
 import { generatePageMetadata } from '@/lib/metadata'
 import { PricingHero } from '@/components/pricing/PricingHero'
 import { PricingFAQ } from '@/components/pricing/PricingFAQ'
+import { AddOnsSection } from '@/components/pricing/AddOnsSection'
 import { PartnersSection } from '@/components/ui/PartnersSection'
 import { TestimonialSection } from '@/components/ui/TestimonialSection'
 import { PreFooterCTA } from '@/components/ui/PreFooterCTA'
@@ -21,6 +22,7 @@ export default function PricingPage() {
       <Suspense>
         <PricingClient />
       </Suspense>
+      <AddOnsSection />
       <PartnersSection />
       <TestimonialSection testimonials={TESTIMONIALS.slice(3, 6)} heading="Trusted by organisations like yours." background="#F5F7FA" />
       <PricingFAQ />

@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
+import { AnimatedBackground } from '@/components/ui/AnimatedBackground'
 import { ArrowRight } from 'lucide-react'
 
 const USE_CASES = [
@@ -163,8 +164,9 @@ export function UseCasePreview() {
   }
 
   return (
-    <section className="section-pad bg-white">
-      <div className="container-garium">
+    <section className="section-pad bg-white" style={{ position: 'relative', overflow: 'hidden' }}>
+      <AnimatedBackground variant="curves" position="left" opacity={0.35} />
+      <div className="container-garium" style={{ position: 'relative', zIndex: 1 }}>
         <AnimatedSection>
           <div className="text-center mb-12">
             <p className="eyebrow mb-5 block">Who we work with</p>

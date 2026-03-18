@@ -186,6 +186,12 @@
   50%       { opacity: 0.3; transform: translate(-50%, -50%) scale(1.04); }
 }
 
+@media (max-width: 768px) {
+  .problem-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

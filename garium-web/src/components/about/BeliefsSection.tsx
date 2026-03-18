@@ -1,5 +1,6 @@
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { SectionLabel } from '@/components/ui/SectionLabel'
+import { AnimatedBackground } from '@/components/ui/AnimatedBackground'
 
 const BELIEFS = [
   {
@@ -26,8 +27,9 @@ const BELIEFS = [
 
 export function BeliefsSection() {
   return (
-    <section className="section-pad bg-white">
-      <div className="container-garium">
+    <section className="section-pad bg-white" style={{ position: 'relative', overflow: 'hidden' }}>
+      <AnimatedBackground variant="dots" opacity={0.3} />
+      <div className="container-garium" style={{ position: 'relative', zIndex: 1 }}>
         <AnimatedSection>
           <div className="text-center mb-14">
             <SectionLabel className="mb-5 block">What we believe</SectionLabel>
