@@ -7,7 +7,7 @@ const PILLARS = [
   {
     icon: Server,
     title: 'Deployed for you',
-    description: 'We handle every aspect of infrastructure setup — server provisioning, model deployment, interface configuration, knowledge base connection, and access controls. You get a working platform, not a setup guide.',
+    description: 'We handle every aspect of infrastructure setup: server provisioning, model deployment, interface configuration, knowledge base connection, and access controls. You get a working platform, not a setup guide.',
   },
   {
     icon: Settings,

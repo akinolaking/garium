@@ -1,10 +1,13 @@
+import Image from 'next/image'
+
 const PARTNERS = [
-  { name: 'NVIDIA',  role: 'GPU Infrastructure' },
-  { name: 'Vercel',  role: 'Deployment'         },
-  { name: 'Stripe',  role: 'Payments'           },
-  { name: 'Contabo', role: 'Cloud Servers'       },
-  { name: 'Grafana', role: 'Monitoring'          },
-  { name: 'WHMCS',   role: 'Billing'             },
+  { name: 'NVIDIA',       role: 'GPU Infrastructure', logo: '/logos/nvidia.svg' },
+  { name: 'AWS',          role: 'Cloud Computing',     logo: '/logos/aws.svg' },
+  { name: 'Google Cloud', role: 'Cloud Infrastructure',logo: '/logos/google-cloud.svg' },
+  { name: 'Vercel',       role: 'Deployment',          logo: '/logos/vercel.svg' },
+  { name: 'Stripe',       role: 'Payments',            logo: '/logos/stripe.svg' },
+  { name: 'Contabo',      role: 'Cloud Servers',       logo: '/logos/contabo.svg' },
+  { name: 'Grafana',      role: 'Monitoring',          logo: '/logos/grafana.svg' },
 ]
 
 export function PartnersSection() {
@@ -42,16 +45,24 @@ export function PartnersSection() {
                 flexDirection: 'column',
                 alignItems: 'center',
                 padding: '12px 20px',
-                background: '#f9fafb',
+                background: '#ffffff',
                 border: '1px solid rgba(8,28,82,0.08)',
                 borderRadius: '10px',
-                minWidth: '100px',
+                minWidth: '110px',
+                boxShadow: '0 1px 6px rgba(8,28,82,0.06)',
+                gap: '6px',
               }}
             >
-              <span style={{ fontSize: '0.9375rem', fontWeight: 500, color: '#111827' }}>
-                {p.name}
-              </span>
-              <span style={{ fontSize: '0.6875rem', color: '#9ca3af', marginTop: '2px' }}>
+              <div style={{ height: '28px', display: 'flex', alignItems: 'center' }}>
+                <Image
+                  src={p.logo}
+                  alt={p.name}
+                  width={80}
+                  height={28}
+                  style={{ objectFit: 'contain', maxHeight: '28px' }}
+                />
+              </div>
+              <span style={{ fontSize: '0.6875rem', color: '#9ca3af' }}>
                 {p.role}
               </span>
             </div>

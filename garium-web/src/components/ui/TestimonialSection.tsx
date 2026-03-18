@@ -1,8 +1,11 @@
-interface Testimonial {
+export interface Testimonial {
   quote: string
   author: string
-  org: string
+  title?: string
+  company?: string
   sector?: string
+  /** Legacy: used when title/company/sector not available */
+  org?: string
 }
 
 interface TestimonialSectionProps {
@@ -49,9 +52,22 @@ export function TestimonialSection({ testimonials, heading, background = '#fffff
                 <p style={{ fontSize: '0.875rem', fontWeight: 500, color: '#081c52', marginBottom: '2px' }}>
                   {t.author}
                 </p>
-                <p style={{ fontSize: '0.8125rem', color: '#6b7280' }}>
-                  {t.org}
-                </p>
+                {t.title && t.company ? (
+                  <>
+                    <p style={{ fontSize: '0.8125rem', color: '#374151' }}>
+                      {t.title}, {t.company}
+                    </p>
+                    {t.sector && (
+                      <p style={{ fontSize: '0.75rem', color: '#6b7280', marginTop: '2px' }}>
+                        {t.sector}
+                      </p>
+                    )}
+                  </>
+                ) : (
+                  <p style={{ fontSize: '0.8125rem', color: '#6b7280' }}>
+                    {t.org}
+                  </p>
+                )}
               </div>
             </div>
           ))}
