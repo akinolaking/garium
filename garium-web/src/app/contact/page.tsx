@@ -27,8 +27,8 @@ export default function ContactPage() {
                 30 minutes. No obligation. You will leave with a clear answer.
               </p>
               <p className="text-sm text-[#6B7280] text-center mb-8">
-                If the form does not load, email us at{' '}
-                <a href="mailto:hello@garium.com" className="text-[#072c8f] underline">hello@garium.com</a>
+                If the form does not load,{' '}
+                <a href="mailto:hello@garium.co" className="text-[#072c8f] underline">send us a mail</a>
               </p>
               <FilloutEmbed />
             </div>

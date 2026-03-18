@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import { Menu } from 'lucide-react'
 import { useMobileMenu } from '@/hooks/useMobileMenu'
 import { GariumLogo } from '@/components/ui/GariumLogo'
@@ -20,6 +21,8 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mounted, setMounted] = useState(false)
   const { isOpen, open, close } = useMobileMenu()
+  const pathname = usePathname()
+  const isHomePage = pathname === '/'
 
   useEffect(() => {
     setMounted(true)
@@ -29,8 +32,8 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', check)
   }, [])
 
-  // Before mount: transparent (matches dark hero on SSR/initial paint)
-  const isScrolled = mounted && scrolled
+  // On home page: transparent until scrolled (dark hero). On all other pages: always solid.
+  const isScrolled = !isHomePage || (mounted && scrolled)
 
   return (
     <>

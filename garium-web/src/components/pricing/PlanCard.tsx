@@ -65,17 +65,21 @@ export function PlanCard({ plan, billing, currency, rates }: PlanCardProps) {
         padding: '12px 14px',
         marginBottom: '16px',
       }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', color: '#6b7280', marginBottom: '6px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', color: '#6b7280', marginBottom: billing === 'annual' ? 0 : '6px' }}>
           <span>Setup fee (one time)</span>
           <span style={{ fontWeight: 500, color: '#081c52' }}>{displaySetup}</span>
         </div>
-        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8125rem' }}>
-          <span style={{ color: '#374151' }}>First payment (3-month min)</span>
-          <span style={{ fontWeight: 600, color: '#081c52', fontSize: '1rem' }}>{displayFirstPayment}</span>
-        </div>
-        <p style={{ fontSize: '0.6875rem', color: '#9ca3af', marginTop: '4px' }}>
-          Setup + 3 months. Then {displayMonthlyRetainer}/month.
-        </p>
+        {billing !== 'annual' && (
+          <>
+            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8125rem' }}>
+              <span style={{ color: '#374151' }}>First payment (3-month min)</span>
+              <span style={{ fontWeight: 600, color: '#081c52', fontSize: '1rem' }}>{displayFirstPayment}</span>
+            </div>
+            <p style={{ fontSize: '0.6875rem', color: '#9ca3af', marginTop: '4px' }}>
+              Setup + 3 months. Then {displayMonthlyRetainer}/month.
+            </p>
+          </>
+        )}
       </div>
 
       <div className="flex items-center gap-2 mb-1">

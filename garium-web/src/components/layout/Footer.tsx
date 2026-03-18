@@ -68,7 +68,7 @@ export function Footer() {
           <div className="lg:col-span-1">
             <GariumLogo size="md" color="#F5F7FA" className="mb-4" />
             <p className="text-sm text-[#a1b1df] leading-relaxed mb-5">
-              Serving organisations worldwide.
+              Private AI infrastructure for organisations that believe their data belongs to them.
             </p>
             <div className="flex items-center gap-3">
               {SOCIAL_LINKS.map(s => (
@@ -137,7 +137,7 @@ export function Footer() {
               </p>
               <p className="text-xs mt-2" style={{ color: 'rgba(255,255,255,0.35)' }}>
                 <a href="mailto:hello@garium.co" className="hover:text-white/60 transition-colors">
-                  hello@garium.co
+                  Send us a mail
                 </a>
               </p>
             </div>
