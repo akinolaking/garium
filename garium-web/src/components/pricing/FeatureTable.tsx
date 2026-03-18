@@ -17,7 +17,7 @@ const FEATURE_ROWS: { feature: string; spark: boolean | string; grow: boolean | 
   { feature: 'Quarterly strategy review', spark: false, grow: false, build: false, seed: false, scale: true, sovereign: true },
   { feature: 'Monthly performance report', spark: false, grow: true, build: true, seed: true, scale: true, sovereign: true },
   { feature: 'Support response time', spark: 'Email', grow: '48hr', build: '24hr', seed: '24hr', scale: 'Priority', sovereign: 'SLA' },
-  { feature: 'Max users', spark: '5', grow: '15', build: '30', seed: '25', scale: '100', sovereign: 'Unlimited' },
+  { feature: 'Max users', spark: '50', grow: '100', build: '200', seed: 'Unlimited', scale: 'Unlimited', sovereign: 'Unlimited' },
 ]
 
 function Cell({ value }: { value: boolean | string }) {

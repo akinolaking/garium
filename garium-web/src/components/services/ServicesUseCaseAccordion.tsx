@@ -96,7 +96,10 @@ export function ServicesUseCaseAccordion() {
           </h2>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '24px', position: 'relative', zIndex: 1 }} className="lg:grid-cols-[1fr_420px]">
+        <div
+          className="grid grid-cols-1 lg:grid-cols-[1fr_420px]"
+          style={{ gap: '24px', position: 'relative', zIndex: 1 }}
+        >
 
           {/* Left: accordion list */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
@@ -182,13 +185,7 @@ export function ServicesUseCaseAccordion() {
           </div>
 
           {/* Right: sticky stat card */}
-          <div
-            style={{
-              position: 'sticky',
-              top: '96px',
-              alignSelf: 'start',
-            }}
-          >
+          <div className="lg:sticky" style={{ top: '80px', alignSelf: 'start' }}>
             <div
               style={{
                 background: '#ffffff',

@@ -35,6 +35,21 @@ const ADD_ONS = [
     color: '#3b6d11',
   },
   {
+    id: 'support',
+    name: 'Instant Support',
+    techName: 'Priority Support',
+    priceFrom: 50,
+    description: 'Direct access to our engineering team with a guaranteed 2-hour response. Get critical issues resolved fast with a dedicated support channel and monthly check-in.',
+    features: [
+      'Dedicated support channel',
+      '2-hour response guarantee',
+      'Direct engineer access',
+      'Monthly check-in call',
+    ],
+    availableOn: ['Spark', 'Grow', 'Build', 'Seed', 'Scale', 'Sovereign'],
+    color: '#6b21a8',
+  },
+  {
     id: 'vision',
     name: 'Vision and Document AI',
     techName: 'Document Intelligence',
