@@ -5,12 +5,12 @@ const TRUST_POINTS = [
   {
     icon: Shield,
     title: 'Your data never leaves',
-    body: 'Dedicated infrastructure allocated to your organisation. No shared servers. No third-party processing. Your information stays inside your environment, always.',
+    body: 'Dedicated infrastructure allocated to your organisation. No shared servers. No third-party processing. Your information stays inside your environment.',
   },
   {
     icon: Globe,
-    title: 'UK and Nigeria, served directly',
-    body: 'Technical delivery from Manchester. Founder operations from Lagos. Both markets understood from the inside — not adapted from a global template.',
+    title: 'Deployed anywhere your organisation needs.',
+    body: 'Cloud infrastructure across multiple regions. Your data stays within your chosen jurisdiction. We work wherever your organisation works.',
   },
   {
     icon: RefreshCw,
@@ -25,7 +25,7 @@ export function TrustSection() {
       <div className="container-garium">
         <AnimatedSection>
           <div className="text-center mb-14">
-            <h2 className="font-semibold text-black mb-4" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', lineHeight: '1.2', letterSpacing: '-0.02em' }}>
+            <h2 className="text-black mb-4" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', lineHeight: '1.2', letterSpacing: '-0.02em' }}>
               Built on open technology. No lock-in.
             </h2>
             <p className="text-[#374151] text-lg max-w-[560px] mx-auto leading-relaxed">

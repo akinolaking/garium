@@ -68,7 +68,7 @@ export function Footer() {
           <div className="lg:col-span-1">
             <GariumLogo size="md" color="#F5F7FA" className="mb-4" />
             <p className="text-sm text-[#a1b1df] leading-relaxed mb-5">
-              Private AI infrastructure for organisations that believe their data belongs to them.
+              Serving organisations worldwide.
             </p>
             <div className="flex items-center gap-3">
               {SOCIAL_LINKS.map(s => (

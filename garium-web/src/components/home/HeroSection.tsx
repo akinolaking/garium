@@ -29,10 +29,23 @@ export function HeroSection() {
               Private AI Infrastructure
             </motion.p>
 
-            <h1 className="text-white mb-6" style={{ fontWeight: 400 }}>
-              <span className="block" style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)', lineHeight: '1.08', letterSpacing: '-0.035em', whiteSpace: 'nowrap' }}>Your AI.</span>
-              <span className="block" style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)', lineHeight: '1.08', letterSpacing: '-0.035em', whiteSpace: 'nowrap' }}>Your data.</span>
-              <span className="block" style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)', lineHeight: '1.08', letterSpacing: '-0.035em', whiteSpace: 'nowrap' }}>No exceptions.</span>
+            <h1 style={{ fontWeight: 300, margin: 0, padding: 0 }}>
+              {['Your AI.', 'Your data.', 'No exceptions.'].map((line) => (
+                <span
+                  key={line}
+                  style={{
+                    display: 'block',
+                    whiteSpace: 'nowrap',
+                    fontSize: 'clamp(2rem, 4.8vw, 4rem)',
+                    fontWeight: 300,
+                    lineHeight: 1.06,
+                    letterSpacing: '-0.03em',
+                    color: '#ffffff',
+                  }}
+                >
+                  {line}
+                </span>
+              ))}
             </h1>
 
             <motion.p

@@ -6,7 +6,27 @@ import { UseCasePreview } from '@/components/home/UseCasePreview'
 import { DifferentiationSection } from '@/components/home/DifferentiationSection'
 import { TrustSection } from '@/components/home/TrustSection'
 import { HomeCTA } from '@/components/home/HomeCTA'
+import { TestimonialSection } from '@/components/ui/TestimonialSection'
+import { PartnersSection } from '@/components/ui/PartnersSection'
 import { CrystalIcon } from '@/components/ui/CrystalIcon'
+
+const HOME_TESTIMONIALS = [
+  {
+    quote: 'We went from blocking every AI tool request to deploying across four departments in two weeks. The flat pricing meant adding more users cost nothing extra.',
+    author: 'Chief Information Officer',
+    org: 'Financial services firm, 120 staff',
+  },
+  {
+    quote: 'We could not touch ChatGPT or Copilot with student data. Garium gave us AI capability without the compliance risk. The teachers were using it within a week.',
+    author: 'Head of Digital Learning',
+    org: 'Secondary school, 1,200 students',
+  },
+  {
+    quote: 'We can now tell clients their briefs never leave our environment. That is not just a legal comfort. It is a new thing we can sell.',
+    author: 'Managing Director',
+    org: 'PR and digital agency, 5 staff',
+  },
+]
 
 export default function HomePage() {
   return (
@@ -22,8 +42,10 @@ export default function HomePage() {
       <SolutionSection />
       <HowItWorks />
       <UseCasePreview />
+      <PartnersSection />
       <DifferentiationSection />
       <TrustSection />
+      <TestimonialSection testimonials={HOME_TESTIMONIALS} heading="Organisations that made the switch." background="#F5F7FA" />
       <HomeCTA />
     </>
   )

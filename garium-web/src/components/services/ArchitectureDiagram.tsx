@@ -4,9 +4,10 @@ import { AnimatedSection } from '@/components/ui/AnimatedSection'
 
 const LAYERS = [
   {
-    label: 'Public interface',
+    label: 'AI Chat Interface',
     sublabel: 'Accessible at your subdomain',
-    tools: ['LibreChat', 'Open WebUI'],
+    description: 'What your team and users see',
+    tools: ['Chat with your AI', 'Search your documents', 'Ask anything'],
     bg: '#f0fdf4',
     border: '#bbf7d0',
     labelColor: '#166534',
@@ -15,9 +16,10 @@ const LAYERS = [
     delay: 0.1,
   },
   {
-    label: 'Staff workspace',
+    label: 'Centralised AI Workspace',
     sublabel: 'Private staff login only',
-    tools: ['Guacamole', 'OpenClaw', 'VSCode'],
+    description: 'What your internal team accesses',
+    tools: ['AI writing tools', 'Automation suite', 'Developer tools'],
     bg: '#eff6ff',
     border: '#bfdbfe',
     labelColor: '#1e40af',
@@ -26,9 +28,10 @@ const LAYERS = [
     delay: 0.25,
   },
   {
-    label: 'Infrastructure',
+    label: 'Your Private AI Engine',
     sublabel: 'Managed by Garium',
-    tools: ['Ollama', 'GPU Server', 'Docker', 'ChromaDB'],
+    description: 'What Garium manages on your behalf',
+    tools: ['AI model processing', 'Knowledge storage', 'Security and uptime'],
     bg: '#eef1f9',
     border: '#d0d8ef',
     labelColor: '#081c52',
@@ -45,7 +48,7 @@ export function ArchitectureDiagram() {
         <AnimatedSection>
           <div className="text-center mb-14">
             <p className="eyebrow mb-5 block">How the platform is structured</p>
-            <h2 className="font-semibold text-black text-balance" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: '1.15', letterSpacing: '-0.02em' }}>
+            <h2 className="text-black text-balance" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: '1.15', letterSpacing: '-0.02em' }}>
               Three layers. One coherent platform.
             </h2>
           </div>
@@ -67,7 +70,8 @@ export function ArchitectureDiagram() {
                     <p className="text-xs font-semibold uppercase tracking-widest mb-0.5" style={{ color: layer.labelColor }}>
                       {layer.sublabel}
                     </p>
-                    <h3 className="text-base font-semibold mb-3" style={{ color: layer.labelColor }}>{layer.label}</h3>
+                    <h3 className="text-base font-semibold mb-1" style={{ color: layer.labelColor }}>{layer.label}</h3>
+                    <p className="text-sm mb-3" style={{ color: layer.labelColor, opacity: 0.7 }}>{layer.description}</p>
                     <div className="flex flex-wrap gap-2">
                       {layer.tools.map(tool => (
                         <span
