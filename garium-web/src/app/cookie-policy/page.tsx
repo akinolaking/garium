@@ -80,7 +80,7 @@ export default function CookiePolicyPage() {
 
             <section aria-labelledby="contact-cookies">
               <h2 id="contact-cookies" className="text-xl font-semibold text-black mb-4">Questions</h2>
-              <p>For any questions about how we use cookies, contact <a href="mailto:privacy@garium.com" className="text-[#072c8f] hover:underline">privacy@garium.com</a>.</p>
+              <p>For any questions about how we use cookies, contact <a href="mailto:privacy@garium.co" className="text-[#072c8f] hover:underline">privacy@garium.co</a>.</p>
             </section>
 
           </div>

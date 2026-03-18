@@ -9,7 +9,7 @@ export function ServicesHero() {
           <div className="max-w-[720px]">
             <SectionLabel light className="mb-6 block">What Garium delivers</SectionLabel>
             <h1 className="font-semibold text-white text-balance mb-6" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', lineHeight: '1.1', letterSpacing: '-0.025em' }}>
-              Not a subscription. A service.
+              Not a subscription. A transformation.
             </h1>
             <p className="text-white/70 text-xl leading-relaxed">
               We deploy, configure, and manage your private AI platform from start to finish. You get a working system tailored to your organisation, not a tool you have to figure out yourself.

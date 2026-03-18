@@ -1,4 +1,5 @@
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
+import { CrystalBackground } from '@/components/ui/CrystalBackground'
 
 const STEPS = [
   {
@@ -9,7 +10,7 @@ const STEPS = [
   {
     number: '02',
     title: 'We deploy your platform',
-    description: 'Infrastructure provisioned. Models configured. Knowledge base loaded. Interfaces set up. Access controls in place. Most deployments complete within 9 to 14 days of contract signing.',
+    description: 'Infrastructure provisioned. Models configured. Knowledge base loaded. Interfaces set up. Access controls in place. Most deployments complete within 24 to 72 hours of contract signing.',
   },
   {
     number: '03',
@@ -20,13 +21,14 @@ const STEPS = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="section-pad bg-[#EDF0F7]">
+    <section id="how-it-works" className="section-pad bg-[#EDF0F7] relative overflow-hidden">
+      <CrystalBackground opacity={0.04} />
       <div className="container-garium">
         <AnimatedSection>
           <div className="text-center mb-16">
             <p className="eyebrow mb-5 block">How it works</p>
-            <h2 className="font-semibold text-black text-balance" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: '1.15', letterSpacing: '-0.02em' }}>
-              Live in two weeks. Running forever.
+            <h2 className="text-black text-balance" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: '1.15', letterSpacing: '-0.02em' }}>
+              Live in no time. Running forever.
             </h2>
           </div>
         </AnimatedSection>

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { AnnouncementBar } from '@/components/layout/AnnouncementBar'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { CookieBanner } from '@/components/ui/CookieBanner'
@@ -49,7 +50,7 @@ const structuredData = {
   sameAs: ['https://linkedin.com/company/gariumai', 'https://twitter.com/gariumai'],
   contactPoint: {
     '@type': 'ContactPoint',
-    email: 'hello@garium.com',
+    email: 'hello@garium.co',
     contactType: 'customer service',
   },
 }
@@ -70,6 +71,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           Skip to main content
         </a>
+        <AnnouncementBar />
         <Navbar />
         <main id="main-content">{children}</main>
         <Footer />

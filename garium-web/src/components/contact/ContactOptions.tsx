@@ -14,8 +14,8 @@ const OPTIONS = [
     icon: Mail,
     title: 'Send an email',
     description: 'Reach us directly with questions, proposals, or partnership enquiries.',
-    cta: 'hello@garium.com',
-    href: 'mailto:hello@garium.com',
+    cta: 'hello@garium.co',
+    href: 'mailto:hello@garium.co',
     primary: false,
   },
   {

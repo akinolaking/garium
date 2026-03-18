@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
+import { CrystalBackground } from '@/components/ui/CrystalBackground'
 import { Server, Settings, Lock } from 'lucide-react'
 
 const PILLARS = [
@@ -22,7 +23,8 @@ const PILLARS = [
 
 export function SolutionSection() {
   return (
-    <section className="section-pad bg-white">
+    <section className="section-pad bg-white relative overflow-hidden">
+      <CrystalBackground opacity={0.04} />
       <div className="container-garium">
         <AnimatedSection>
           <div className="max-w-[680px] mx-auto text-center mb-14">

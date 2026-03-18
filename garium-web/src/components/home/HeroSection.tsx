@@ -5,7 +5,14 @@ import { ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { CrystalIcon } from '@/components/ui/CrystalIcon'
 
-const HEADLINE_LINES = ['Your AI.', 'Your data.', 'No exceptions.']
+const STATS = [
+  { label: 'Response time', value: '< 3 sec', color: '#ffffff' },
+  { label: 'Data leaves server', value: 'Never', color: '#4ade80' },
+  { label: 'Setup time', value: '24–72 hours', color: '#ffffff' },
+  { label: 'Uptime SLA', value: '99.9%', color: '#ffffff' },
+  { label: 'Supported models', value: '10+', color: '#ffffff' },
+  { label: 'Active deployments', value: 'Growing', color: '#93c5fd' },
+]
 
 export function HeroSection() {
   return (
@@ -22,18 +29,10 @@ export function HeroSection() {
               Private AI Infrastructure
             </motion.p>
 
-            <h1 className="font-semibold text-white mb-6" style={{ fontSize: 'clamp(2.25rem, 8vw, 5rem)', lineHeight: '1.05', letterSpacing: '-0.03em' }}>
-              {HEADLINE_LINES.map((line, i) => (
-                <motion.span
-                  key={i}
-                  initial={{ opacity: 0, y: 24 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 + i * 0.12, ease: [0.25, 0.46, 0.45, 0.94] }}
-                  className="block text-balance"
-                >
-                  {line}
-                </motion.span>
-              ))}
+            <h1 className="text-white mb-6" style={{ fontWeight: 400 }}>
+              <span className="block" style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)', lineHeight: '1.08', letterSpacing: '-0.035em', whiteSpace: 'nowrap' }}>Your AI.</span>
+              <span className="block" style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)', lineHeight: '1.08', letterSpacing: '-0.035em', whiteSpace: 'nowrap' }}>Your data.</span>
+              <span className="block" style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)', lineHeight: '1.08', letterSpacing: '-0.035em', whiteSpace: 'nowrap' }}>No exceptions.</span>
             </h1>
 
             <motion.p
@@ -64,14 +63,6 @@ export function HeroSection() {
               </Link>
             </motion.div>
 
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.4, delay: 0.9 }}
-              className="text-white/60 text-sm"
-            >
-              Trusted by organisations in Nigeria and the United Kingdom.
-            </motion.p>
           </div>
 
           <div className="hidden lg:flex items-center justify-center relative">
@@ -85,31 +76,34 @@ export function HeroSection() {
               <CrystalIcon size={200} color="rgba(255,255,255,0.18)" animate={true} />
             </motion.div>
 
-            {/* Floating stats card — glassmorphism */}
+            {/* Hero stats widget — 6 rows, CSS-animated */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.9 }}
-              className="absolute -bottom-4 -right-4 rounded-2xl p-5 shadow-xl max-w-[220px] glass-highlight"
+              className="absolute -bottom-4 -right-4 rounded-2xl p-5 shadow-xl glass-highlight"
+              style={{ width: '280px' }}
               aria-label="Platform statistics"
             >
-              <div className="flex items-center gap-2 mb-3">
+              <div className="flex items-center gap-2 mb-4">
                 <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" aria-hidden />
                 <span className="text-white/70 text-xs font-medium">Live infrastructure</span>
               </div>
-              <div className="space-y-2">
-                <div className="flex justify-between items-center">
-                  <span className="text-white/50 text-xs">Average response</span>
-                  <span className="text-white text-xs font-semibold">&lt; 3 sec</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-white/50 text-xs">Data leaves environment</span>
-                  <span className="text-green-400 text-xs font-semibold">Never</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-white/50 text-xs">Setup time</span>
-                  <span className="text-white text-xs font-semibold">9–14 days</span>
-                </div>
+              <div className="space-y-2.5">
+                {STATS.map((stat, i) => (
+                  <div
+                    key={stat.label}
+                    className="flex justify-between items-center"
+                    style={{
+                      animation: 'heroStatFadeIn 0.4s ease forwards',
+                      animationDelay: `${1.0 + i * 0.1}s`,
+                      opacity: 0,
+                    }}
+                  >
+                    <span className="text-white/50 text-xs">{stat.label}</span>
+                    <span className="text-xs font-semibold" style={{ color: stat.color }}>{stat.value}</span>
+                  </div>
+                ))}
               </div>
             </motion.div>
           </div>

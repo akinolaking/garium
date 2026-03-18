@@ -81,7 +81,7 @@ export default function TermsOfServicePage() {
                 <p><strong className="text-black">Garium / Conqolx Technologies Limited</strong></p>
                 <p>Bartle House, 9 Oxford Court, Manchester, M2 3WQ, United Kingdom</p>
                 <p>VeniaHub 8, The Providence St, Lekki Phase 1, Lagos 100252, Nigeria</p>
-                <p className="mt-2"><a href="mailto:hello@garium.com" className="text-[#072c8f] hover:underline">hello@garium.com</a></p>
+                <p className="mt-2"><a href="mailto:hello@garium.co" className="text-[#072c8f] hover:underline">hello@garium.co</a></p>
               </address>
             </section>
 

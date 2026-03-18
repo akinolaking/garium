@@ -24,7 +24,7 @@ export default function PrivacyPolicyPage() {
             <section aria-labelledby="who-we-are">
               <h2 id="who-we-are" className="text-xl font-semibold text-black mb-4">Who we are</h2>
               <p>Conqolx Technologies Limited, trading as Garium, is the data controller for personal data collected through the Garium website (garium.com) and the Garium private AI platform services. Registered in England and Wales (RC: 14565201) and Nigeria (RC: 1775966).</p>
-              <p className="mt-3">Data protection contact: <a href="mailto:privacy@garium.com" className="text-[#072c8f] hover:underline">privacy@garium.com</a></p>
+              <p className="mt-3">Data protection contact: <a href="mailto:privacy@garium.co" className="text-[#072c8f] hover:underline">privacy@garium.co</a></p>
             </section>
 
             <section aria-labelledby="what-we-collect">
@@ -62,7 +62,7 @@ export default function PrivacyPolicyPage() {
             <section aria-labelledby="your-rights">
               <h2 id="your-rights" className="text-xl font-semibold text-black mb-4">Your rights</h2>
               <p>Under UK GDPR and the Nigeria Data Protection Act 2023, you have the right to access, correct, delete, restrict processing of, and port your personal data. You may also object to processing based on legitimate interests.</p>
-              <p className="mt-3">To exercise these rights, contact <a href="mailto:privacy@garium.com" className="text-[#072c8f] hover:underline">privacy@garium.com</a>. We will respond within 30 days.</p>
+              <p className="mt-3">To exercise these rights, contact <a href="mailto:privacy@garium.co" className="text-[#072c8f] hover:underline">privacy@garium.co</a>. We will respond within 30 days.</p>
             </section>
 
             <section aria-labelledby="cookies-section">
@@ -81,7 +81,7 @@ export default function PrivacyPolicyPage() {
                 <p><strong className="text-black">Garium / Conqolx Technologies Limited</strong></p>
                 <p>Bartle House, 9 Oxford Court, Manchester, M2 3WQ, United Kingdom</p>
                 <p>VeniaHub 8, The Providence St, Lekki Phase 1, Lagos 100252, Nigeria</p>
-                <p className="mt-2"><a href="mailto:privacy@garium.com" className="text-[#072c8f] hover:underline">privacy@garium.com</a></p>
+                <p className="mt-2"><a href="mailto:privacy@garium.co" className="text-[#072c8f] hover:underline">privacy@garium.co</a></p>
               </address>
             </section>
 
